@@ -1,0 +1,16 @@
+# @name getUsers
+GET http://localhost:8080/api/users?_start=10&_end=12
+
+################################
+
+# @name addUser
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "id": "9616fc980ea8a45e6e93cb21",
+  "name": "Duy",
+  "department": "department1",
+  "company": "CUBICIDE",
+  "jobTitle": "check"
+}
