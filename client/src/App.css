@@ -1,0 +1,111 @@
+/* App.css */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.app__left {
+  flex: 30%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  overflow-y: auto; /* Cho phép scroll nếu nội dung vượt quá chiều cao */
+}
+
+.app__right {
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__right-header {
+  background-color: #9ac4f8;
+  height: 60px;
+  padding: 5px;
+}
+
+.app__right-content {
+  flex: 1;
+  padding: 20px;
+  height: calc(100vh-60px);
+  overflow-y: auto;
+}
+.app__right-toggle-menu {
+  display: none;
+}
+
+.app__right-header__title {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  border: solid 1px #5d9ae5;
+  width: 300px;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .app__right-header {
+    text-align: center;
+  }
+
+  .app__left {
+    display: none; /* Ẩn thanh menu khi chuyển sang chế độ điện thoại */
+  }
+
+  .app__right-content {
+    padding-top: 50px; /* Tăng padding top để không bị che bởi thanh menu */
+  }
+
+  /* Hiển thị thanh menu khi ấn vào */
+  .app__left.is-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: 999; /* Đặt z-index cao hơn để hiển thị trên các phần tử khác */
+    transition: transform 0.3s ease;
+  }
+
+  .app__left.is-open ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .app__left.is-open ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  .app__left.is-open ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  .app__left {
+    display: none; /* Ẩn LeftSide khi màn hình có độ rộng nhỏ hơn hoặc bằng 768px */
+  }
+
+  .app__right {
+    width: 100%; /* Khi ẩn LeftSide, RightSide chiếm toàn bộ chiều rộng của màn hình */
+  }
+
+  .app__right.is-open {
+    width: 60%; /* Khi hiển thị LeftSide, RightSide chiếm 60% chiều rộng của màn hình */
+  }
+
+  .app__right-toggle-menu {
+    display: block; /* Hiển thị nút toggle menu khi màn hình là điện thoại */
+  }
+}
