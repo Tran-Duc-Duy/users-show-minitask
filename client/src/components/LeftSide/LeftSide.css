@@ -1,0 +1,52 @@
+/* LeftSide.css */
+
+/* Styles for the loading state */
+.left-side__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-side__loading-text {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Styles for the user list */
+.left-side {
+  overflow-y: auto;
+}
+
+.left-side__list {
+  padding: 10px;
+}
+
+.left-side__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.left-side__item svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+}
+
+.left-side__item-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.user_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+}
+.user_item.selected {
+  background-color: lightblue;
+  color: white;
+}
